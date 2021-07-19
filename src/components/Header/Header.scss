@@ -1,0 +1,27 @@
+//utility 
+ul {
+    align-items: flex-end;
+
+    li{
+        list-style-type: none;
+        display: inline;
+        margin: 0 0.9rem;
+    }
+    
+}
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    background: #18181818;
+    // align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    h1{
+        font-size: 0.8rem;
+    }
+    div{
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+}
