@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import RoutesLinks from '../../utils/Routes';
 import './Header.scss'
 import {
@@ -45,7 +45,10 @@ const Header = () =>{
         <div>
             <header>
                 <div className='container'> 
-                    <h1>SMALL STREAM</h1>
+                {/* <Link to='/'> */}
+                    <h1 className="p-2">SMALL STREAM</h1>
+                {/* </Link> */}
+                    
                     
                     <ul className="flex flex-grow justify-evenly max-w-2xl">
                         {
@@ -56,8 +59,6 @@ const Header = () =>{
                                 
                             ))
                         }
-                        {/* <li> <NavLink to={RoutesLinks.Home}> Home </NavLink>  </li>
-                        <li> <NavLink to={RoutesLinks.Videos}> Stream </NavLink>  </li> */}
                     </ul>
                 
                     

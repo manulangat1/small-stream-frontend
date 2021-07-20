@@ -15,13 +15,19 @@ const  Results = ()  => {
     const link:any = getTitles.find( ({title}) => title === `${params.genre}`);
     console.log("here",link?.url)
     useEffect(() => {
+        setMovies([])
+        console.log(movies)
         async function  callT(){
-            setMovies([])
-            console.log(movies)
-            const result = await  axios.get(`https://api.themoviedb.org/3${link?.url || getTitles[0].url}` )
-            console.log(result)
-            setMovies(result.data.results)
-            console.log(movies)
+            try {
+                const result = await  axios.get(`https://api.themoviedb.org/3${link.url}` )
+                console.log(result)
+                setMovies(result.data.results)
+                console.log(movies)
+            } catch (error){
+                console.log(error)
+                setMovies([])
+            }
+            
         }
         callT()
     }, [params.genre])
