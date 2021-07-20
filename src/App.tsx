@@ -8,6 +8,8 @@ import './App.scss'
 
 import { store } from './ReduxStore/store';
 import { Provider} from 'react-redux'
+import Nav from './components/Nav/Nav';
+import Results from './components/Results/Results';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Provider store={store}>
         <Router>
           <Header />
+          <Nav />
+          <Results />
           <Switch>
             <section className="main">
               <Routes />
