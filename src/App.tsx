@@ -19,7 +19,7 @@ function App() {
         <Router>
           <Header />
           <Nav />
-          <Results />
+          {/* <Results /> */}
           <Switch>
             <section className="main">
               <Routes />
