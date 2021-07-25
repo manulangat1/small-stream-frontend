@@ -6,6 +6,7 @@ import ReusableInputs from '../Reusable/Inputs/ReusableInputs';
 import { CommonButton } from '../Reusable/Buttons/Buttons';
 import { login } from '../../ReduxStore/userAuth/Action';
 import { RootState } from '../../ReduxStore/store';
+import { Redirect } from 'react-router-dom';
 
 interface State {
     email:string,
@@ -29,7 +30,6 @@ const Login = () => {
             console.log("submitting",values.email,values.password)
 			// setLoading(todos?.loading);
             login(values.email,values.password)(dispatch)
-			// dispatch(loginAction(values.email, values.password));
 		},
 	});
     const loginElements = [ 
@@ -55,6 +55,9 @@ const Login = () => {
 		},
     ]
     console.log(error)
+    if(localStorage.getItem('sstoken')){
+        return <Redirect to="/" />
+    }
     return (
 
         <section>

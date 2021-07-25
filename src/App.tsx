@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
@@ -7,11 +7,13 @@ import Routes from './components/Routes/Routes';
 import './App.scss'
 
 import { store } from './ReduxStore/store';
-import { Provider} from 'react-redux'
+import { Provider, useDispatch} from 'react-redux'
 import Nav from './components/Nav/Nav';
 import Results from './components/Results/Results';
+import { getProfile } from './ReduxStore/userAuth/Action';
 
-function App() {
+const  App = () => {
+  
   return (
     <div className="App">
       <section>

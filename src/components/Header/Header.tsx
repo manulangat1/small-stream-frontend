@@ -11,6 +11,7 @@ import {
     UserIcon
 } from '@heroicons/react/outline'
 import Icons from '../Reusable/Icons/Icons';
+import LoadingBar from 'react-redux-loading-bar'
 const headerEl = [
     {
         id:1,
@@ -68,6 +69,7 @@ const Header = () =>{
                 
                     
                 </div>
+                <LoadingBar />
             </header>
             
         </div>

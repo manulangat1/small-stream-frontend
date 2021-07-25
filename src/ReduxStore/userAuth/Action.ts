@@ -10,8 +10,9 @@ export const login = (email:string,password:string ) => (dispatch:Dispatch) => {
 		{ url: ApiEndpoints.login, method: 'POST', dispatch, data },
 		res => {
 			const { data } = res.data;
+			console.log(data)
 
-			dispatch({ type: UserTypes.LOGIN_USER });
+			dispatch({ type: UserTypes.LOGIN_USER ,payload:{data:data}});
 		},
 		error => {
             console.log(error)
@@ -20,3 +21,18 @@ export const login = (email:string,password:string ) => (dispatch:Dispatch) => {
 	);
 }
 
+export const getProfile = () => (dispatch:Dispatch) => {
+	return ActionHandler(
+		{ url: ApiEndpoints.profile, method: 'GET', dispatch },
+		res => {
+			const { data } = res;
+			console.log("profile is",data)
+
+			dispatch({ type: UserTypes.LOAD_PROFILE ,payload:{data}});
+		},
+		error => {
+            console.log(error)
+			dispatch({ type: UserTypes.LOGIN_FAIL,payload:{error:error.message}});
+		},
+	);
+}

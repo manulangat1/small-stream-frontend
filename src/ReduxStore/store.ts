@@ -3,8 +3,8 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 // import { RootReducer } from './rootReducer';
 import rootReducer from './rootReducer';
-
-const middleware = [thunk];
+import { loadingBarMiddleware } from 'react-redux-loading-bar'
+const middleware = [thunk,loadingBarMiddleware()];
 
 
 

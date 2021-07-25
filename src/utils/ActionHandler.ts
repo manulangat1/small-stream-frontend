@@ -19,7 +19,7 @@ export const ActionHandler = async (
 
 	try {
 		const ContentTypes = contentType ? contentType : 'application/json';
-		const token = localStorage.getItem('token');
+		const token = localStorage.getItem('sstoken');
 		if (token) {
 			const res = await axios({
 				method,
