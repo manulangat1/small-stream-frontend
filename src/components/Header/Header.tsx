@@ -15,27 +15,32 @@ const headerEl = [
     {
         id:1,
         type:'HOME',
-        icon:HomeIcon
+        icon:HomeIcon,
+        url:RoutesLinks.Login
     },
     {
         id:2,
         type:'TRENDING',
-        icon:LightningBoltIcon
+        icon:LightningBoltIcon,
+        url:RoutesLinks.Home
     },
     {
         id:3,
         type:'FAV',
-        icon:BadgeCheckIcon
+        icon:BadgeCheckIcon,
+        url:RoutesLinks.Home
     },
     {
         id:4,
         type:'COLLECTION',
-        icon:CollectionIcon
+        icon:CollectionIcon,
+        url:RoutesLinks.Home
     },
     {
         id:2,
         type:'Search',
-        icon:SearchIcon
+        icon:SearchIcon,
+        url:RoutesLinks.Home
     },
 ]
 
@@ -54,7 +59,7 @@ const Header = () =>{
                         {
                             headerEl.map((el:any) => (
                                 <li key={el.id} >
-                                    <Icons t={el.type} Icon={el.icon}  />
+                                    <Icons t={el.type} Icon={el.icon} url={el.url} />
                                 </li>
                                 
                             ))

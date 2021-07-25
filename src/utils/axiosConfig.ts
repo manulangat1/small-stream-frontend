@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const baseUrl = process.env.REACT_APP_BACKEND_URL + `${process.env.REACT_APP_API_KEY}`;
+export const baseUrl = process.env.REACT_APP_BACKEND_URL ;
 
 const token = 'test-token';
 

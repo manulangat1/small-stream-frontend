@@ -1,4 +1,6 @@
 export enum ApiEndpoints {
     home = '/',
-    videos = '/videos'
+    videos = '/videos',
+    //auth 
+    login = '/login'
 }

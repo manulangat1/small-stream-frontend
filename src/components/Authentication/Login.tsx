@@ -4,6 +4,8 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import ReusableInputs from '../Reusable/Inputs/ReusableInputs';
 import { CommonButton } from '../Reusable/Buttons/Buttons';
+import { login } from '../../ReduxStore/userAuth/Action';
+import { RootState } from '../../ReduxStore/store';
 
 interface State {
     email:string,
@@ -11,6 +13,8 @@ interface State {
 }
 
 const Login = () => {
+    const dispatch = useDispatch();
+    const error:any =  useSelector((state:RootState) => state.users['message'])
     const [values, setValues] = useState<State>({
         email:'',
         password:''
@@ -24,6 +28,7 @@ const Login = () => {
 		onSubmit: async values => {
             console.log("submitting",values.email,values.password)
 			// setLoading(todos?.loading);
+            login(values.email,values.password)(dispatch)
 			// dispatch(loginAction(values.email, values.password));
 		},
 	});
@@ -49,9 +54,15 @@ const Login = () => {
 			label: 'Password',
 		},
     ]
-
+    console.log(error)
     return (
+
         <section>
+            {
+                error ? (
+                    <h1>{error}</h1>
+                ) : ''
+            }
             <form onSubmit={formik.handleSubmit}>
                 <ul>
                     {

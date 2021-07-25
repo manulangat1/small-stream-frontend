@@ -10,9 +10,12 @@ const ReusableInputs = ({label,type,placeholder,formik,beforeLinkText,link,textL
                    {label}
                </label>
                <input 
-               onChange={formik.handleChange}
+            //    onChange={formik && formik.handleChange}
+            onChange={formik.handleChange}
                  type={type}
                  placeholder={placeholder}
+                 value={formik.values[name]}
+                 name={name }
                 />
                 <div className="d-inline">
                     <small className="px-4 text-danger float-start">
