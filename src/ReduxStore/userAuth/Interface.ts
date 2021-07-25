@@ -1,7 +1,8 @@
 
 export interface User {
     username:string,
-    email:string 
+    email:string,
+    image:string
 }
 
 

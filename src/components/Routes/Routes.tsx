@@ -7,6 +7,9 @@ import Login from '../Authentication/Login';
 import Home from '../Home/Home';
 import Results from '../Results/Results';
 import Videos from '../videos/Videos';
+import {Elements} from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+const stripePromise = loadStripe('my_test_key');
 const  Routes = () => {
     const dispatch = useDispatch()
     useEffect(() => {
@@ -23,6 +26,7 @@ const  Routes = () => {
     ]
     return (
         <div>
+             <Elements stripe={stripePromise}>
             <section>
                 {
                     freeLinks.map(route => (
@@ -39,6 +43,7 @@ const  Routes = () => {
                     ))
                 }
             </section>
+            </Elements>
         </div>
     )
 }
